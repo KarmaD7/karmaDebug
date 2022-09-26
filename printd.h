@@ -8,13 +8,7 @@
 #endif
 
 #ifdef LOCAL_DEBUG
-  #define debug(...) printf(__VA_ARGS__)
+  #define debug(fmt, ...) (printf(fmt" line : %d \n",##__VA_ARGS__,__LINE__));
 #else
   #define debug(...)
-#endif
-
-#ifdef LOCAL_DEBUG
-  #define debug2(fmt, ...) (printf(fmt" line : %d \n",##__VA_ARGS__,__LINE__));
-#else
-  #define debug2(...)
 #endif
